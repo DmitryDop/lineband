@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>ЛИНИЯ — Top Russian Emo Since 2001</title>
+<meta name="description" content="Хроника московской эмокор-группы ЛИНИЯ: 2001–2017, дискография, составы, возвращения.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141317;
+  --ink-2:#1C1B21;
+  --bone:#F2EFEA;
+  --phoenix:#FF3B6B;
+  --dust:#8B8595;
+  --hairline:rgba(242,239,234,.14);
+  --mono:'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  --display:'Oswald', 'Arial Narrow', sans-serif;
+  --body:'Inter', system-ui, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--ink);
+  color:var(--bone);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  touch-action:pan-x pan-y;
+}
+::selection{background:var(--phoenix);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+a:hover, a:focus-visible{color:var(--phoenix)}
+:focus-visible{outline:2px solid var(--phoenix);outline-offset:3px}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.note{font-size:13px;color:var(--dust);line-height:1.5}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* ---------- hero ---------- */
+.hero{padding:112px 0 72px;min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end}
+.hero h1{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(64px,14vw,168px);line-height:.92;
+  letter-spacing:.06em;text-transform:uppercase;
+}
+.hero .slogan{
+  font-family:var(--mono);color:var(--phoenix);
+  font-size:clamp(13px,1.6vw,16px);letter-spacing:.32em;text-transform:uppercase;
+  margin-top:18px;
+}
+.hero .status{margin-top:10px;color:var(--dust);font-size:15px;max-width:52ch}
+
+/* player switcher */
+.ptabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:40px;max-width:640px}
+.ptab{
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  background:none;border:1px solid var(--hairline);color:var(--dust);
+  padding:8px 14px;border-radius:2px;cursor:pointer;transition:all .15s;text-align:left;
+}
+.ptab span{color:var(--phoenix);margin-left:8px}
+.ptab:hover,.ptab:focus-visible{border-color:var(--dust);color:var(--bone)}
+.ptab[aria-pressed="true"]{background:var(--phoenix);border-color:var(--phoenix);color:var(--ink)}
+.ptab[aria-pressed="true"] span{color:var(--ink)}
+
+/* ---------- era nav ---------- */
+.era-nav{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:0;margin-top:96px}
+.era-nav ol{list-style:none;max-width:920px;margin:0 auto;padding:0 24px}
+.era-nav li{border-bottom:1px solid var(--hairline);transition:color .15s}
+.era-nav li:last-child{border-bottom:none}
+.era-nav a{
+  display:flex;align-items:baseline;gap:28px;padding:14px 0;
+  font-family:var(--display);text-transform:uppercase;
+}
+.era-nav a:hover,
+.era-nav a:focus-visible{color:var(--phoenix)}
+.era-nav .yr{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--dust);min-width:11ch}
+.era-nav .name{font-size:clamp(20px,3.4vw,30px);font-weight:500;letter-spacing:.02em}
+
+/* ---------- chapters ---------- */
+.chapter{border-top:1px solid var(--hairline)}
+.chapter .wrap{padding-top:72px;padding-bottom:72px}
+.chapter .eyr{
+  font-family:var(--mono);color:var(--dust);
+  font-size:14px;letter-spacing:.22em;
+}
+.chapter h2{
+  font-family:var(--display);font-weight:500;text-transform:uppercase;
+  font-size:clamp(34px,5.4vw,58px);line-height:1.04;letter-spacing:.03em;
+  margin:6px 0 36px;
+}
+.chapter p{max-width:62ch;color:#D9D5CF}
+.chapter b{font-weight:500;color:var(--bone)}
+.chapter .ev{
+  margin-top:28px;display:grid;grid-template-columns:13ch 1fr;gap:20px;
+  border-left:2px solid var(--phoenix);padding-left:16px;
+}
+.chapter .ev .d{font-family:var(--mono);font-size:14px;color:var(--phoenix);white-space:nowrap}
+.chapter .ev .t{font-size:15px;max-width:50ch;color:#D9D5CF}
+.fn{color:var(--dust);border-bottom:1px dashed var(--dust);cursor:help;text-decoration:none}
+.footnote{font-size:13px;color:var(--dust);margin-top:24px;max-width:62ch}
+
+/* ---------- ladder ---------- */
+.ladder-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.ladder-head h2{
+  font-family:var(--display);font-weight:500;text-transform:uppercase;
+  font-size:clamp(28px,4.2vw,44px);line-height:1.05;
+}
+.ladder-head .hint{max-width:44ch}
+.ladder-scale{
+  position:relative;height:16px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--dust);
+  margin-left:170px;margin-bottom:2px;
+}
+.ladder-scale span{position:absolute;top:0}
+@media (max-width:760px){.ladder-scale{display:none}}
+.member{
+  display:grid;grid-template-columns:150px 20px 1fr;
+  align-items:center;gap:0;
+  border-top:1px solid var(--hairline);padding:13px 0;
+}
+.member:last-of-type{border-bottom:1px solid var(--hairline)}
+.member .who{font-size:15px;line-height:1.35}
+.member .who .role{display:block;font-size:11px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:3px}
+.member .dotline{height:1px;background:var(--hairline);align-self:center}
+.member .track{position:relative;height:22px}
+.member .band{
+  position:absolute;top:3px;bottom:3px;border-radius:2px;
+  opacity:.9;transition:opacity .15s, box-shadow .15s;
+}
+.member .band::after{
+  content:attr(data-dates);
+  position:absolute;left:0;top:-22px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  color:var(--bone);white-space:nowrap;
+  opacity:0;transform:translateY(4px);
+  transition:opacity .18s ease, transform .18s ease;
+  pointer-events:none;
+}
+.member:hover .band::after,
+.member:focus-within .band::after{opacity:1;transform:none}
+.member:hover .band,
+.member:focus-within .band{opacity:1;box-shadow:0 0 14px rgba(255,59,107,.35)}
+.member-vo .band{background:#FF3B6B}
+.member-gu .band{background:#B98A5E}
+.member-ba .band{background:#6E9BAF}
+.member-dr .band{background:#8C7BA8}
+.band[data-gap="1"]{opacity:.38;box-shadow:none}
+.legend{display:flex;gap:24px;flex-wrap:wrap;margin-top:20px;font-size:12px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dust)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px;vertical-align:1px}
+.ladder-notes{margin-top:26px}
+
+/* mobilka: touch targets up to 44px (F1) */
+@media (max-width:760px){
+  .player .ptab{padding:13px 16px}
+  .disc-head .filt button{padding:13px 16px}
+}
+
+/* ladder, phone: vertical list */
+@media (max-width:760px){
+  .member{grid-template-columns:1fr;gap:4px;padding:15px 0}
+  .member .dotline,.member .track{display:none}
+  .member .band::after{content:none}
+  .member .who{cursor:pointer;display:block}
+  .member .period{
+    display:block;font-family:var(--mono);font-size:12px;color:var(--dust);
+    margin-top:0;letter-spacing:.06em;
+    max-height:0;opacity:0;overflow:hidden;
+    transition:max-height .25s ease, opacity .25s ease, margin-top .25s ease;
+  }
+  .member.open .period{max-height:96px;opacity:1;margin-top:6px}
+}
+.member .period{display:none}
+
+/* ---------- discography ---------- */
+.disc-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.disc-head h2{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(28px,4.2vw,44px)}
+.filt{display:flex;gap:8px;flex-wrap:wrap}
+.filt button{
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  background:none;border:1px solid var(--hairline);color:var(--dust);
+  padding:7px 14px;border-radius:2px;cursor:pointer;transition:all .15s;
+}
+.filt button:hover,.filt button:focus-visible{border-color:var(--dust);color:var(--bone)}
+.filt button[aria-pressed="true"]{background:var(--phoenix);border-color:var(--phoenix);color:var(--ink)}
+.disco{list-style:none}
+.disco li{
+  display:grid;grid-template-columns:180px 1fr auto;gap:18px;align-items:baseline;
+  border-top:1px solid var(--hairline);padding:16px 0;
+}
+.disco li:last-child{border-bottom:1px solid var(--hairline)}
+.disco .date{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--dust)}
+.disco .date.exact{color:var(--bone)}
+.disco .title{font-family:var(--display);font-weight:500;font-size:clamp(19px,2.6vw,25px);letter-spacing:.02em;text-transform:uppercase}
+.disco .title sup{font-size:11px;font-family:var(--mono);color:var(--phoenix);margin-left:6px}
+.disco .meta{font-family:var(--mono);font-size:12px;color:var(--dust);letter-spacing:.08em;text-transform:uppercase;text-align:right;white-space:nowrap}
+@media (max-width:640px){
+  .disco li{grid-template-columns:1fr auto}
+  .disco .date{grid-column:1 / -1;font-size:12px}
+}
+.disc-notes{margin-top:26px}
+.disc-notes p{margin-top:10px}
+
+/* ---------- press ---------- */
+.press{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--hairline);border:1px solid var(--hairline)}
+.press article{background:var(--ink);padding:30px 28px}
+.press .q{font-family:var(--display);font-weight:400;font-size:17px;line-height:1.5;color:var(--bone)}
+.press .src{margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--dust)}
+.press .src a{color:var(--phoenix)}
+
+/* ---------- media ---------- */
+.media{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1px;background:var(--hairline);border:1px solid var(--hairline)}
+.media li{background:var(--ink)}
+.media a{display:block;height:100%;background:var(--ink);padding:28px 26px;transition:background .15s}
+.media a:hover,.media a:focus-visible{background:var(--ink-2)}
+.media .yr{display:block;font-family:var(--mono);font-size:12px;color:var(--dust);letter-spacing:.1em}
+.media .nm{display:block;font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:20px;margin-top:8px;letter-spacing:.02em}
+.media .go{display:block;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--phoenix);letter-spacing:.08em}
+
+/* ---------- finale ---------- */
+.finale{padding:0}
+.marquee{
+  overflow:hidden;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+  padding:12px 0;white-space:nowrap;
+}
+.marquee .row{display:inline-block;animation:slide 26s linear infinite}
+.marquee span{font-family:var(--mono);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--phoenix);padding-right:48px}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee .row{animation:none}}
+.finale .body{padding:88px 0}
+.finale h2{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(34px,5vw,54px);line-height:1.05;margin-bottom:32px}
+.vinyl{
+  margin-top:44px;padding:36px;border:1px solid var(--hairline);border-radius:3px;
+  display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;
+}
+@media (max-width:640px){.vinyl{grid-template-columns:1fr}}
+@media (max-width:640px){section{padding:48px 0}}
+.vinyl .disc{
+  width:150px;height:150px;border-radius:50%;flex-shrink:0;
+  background:repeating-radial-gradient(circle at 50% 50%, #1a191f 0 3px, #232229 3px 4px);
+  position:relative;
+}
+.vinyl .disc::after{content:'';position:absolute;inset:34%;border-radius:50%;background:var(--phoenix);border:5px solid var(--ink)}
+.vinyl h3{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:24px;letter-spacing:.02em}
+.vinyl .d{font-family:var(--mono);font-size:13px;color:var(--dust);letter-spacing:.08em;margin-top:6px}
+.vinyl p{margin-top:14px;max-width:48ch}
+.vinyl .cta{
+  display:inline-block;margin-top:20px;padding:12px 22px;
+  background:var(--phoenix);color:var(--ink);
+  font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  border-radius:2px;transition:opacity .15s;
+}
+.vinyl .cta:hover,.vinyl .cta:focus-visible{opacity:.85}
+.vinyl .alt{margin-left:14px;font-family:var(--mono);font-size:12px;color:var(--dust)}
+.vinyl .alt:hover,.vinyl .alt:focus-visible{color:var(--bone)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--hairline);padding:56px 0 64px}
+footer .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media (max-width:640px){footer .cols{grid-template-columns:1fr}}
+footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dust);margin-bottom:14px;font-weight:500}
+footer ul{list-style:none}
+footer li{margin-top:6px;font-size:15px}
+footer .fine{margin-top:48px;max-width:70ch}
+
+/* ---------- reveal (JS only) ---------- */
+html.js .reveal{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
+html.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
+</style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+    ym(155213, 'init', {clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/155213" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <h1>Линия</h1>
+    <p class="slogan">Top Russian Emo Since 2001</p>
+    <p class="status">Москва, эмокор и постхардкор. 2001–2017, с возвращениями — последнее на EMOFEST 2024. Страница — хроника группы: релизы, составы, разрывы.</p>
+    <div class="player">
+      <div class="ptabs" role="tablist" aria-label="Релизы в плеере">
+        <button class="ptab" aria-pressed="true" data-id="1153638502" data-name="Два сердца, два огня, 2007">Два сердца, два огня <span>2007</span></button>
+        <button class="ptab" aria-pressed="false" data-id="2297474920" data-name="Отражение, 2010">Отражение <span>2010</span></button>
+        <button class="ptab" aria-pressed="false" data-id="2877202795" data-name="В окружении стен, 2015">В окружении стен <span>2015</span></button>
+        <button class="ptab" aria-pressed="false" data-id="2186317322" data-name="Лабиринты, 2016">Лабиринты <span>2016</span></button>
+      </div>
+      <div id="pframe" style="margin-top:16px">
+        <iframe
+          title="Плеер Bandcamp: альбом «Два сердца, два огня»"
+          style="border:0;width:100%;max-width:640px;height:747px;display:block"
+          src="https://bandcamp.com/EmbeddedPlayer/album=1153638502/size=large/bgcol=141317/linkcol=ff3b6b/transparent=true/"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="note" id="pnote" aria-live="polite" style="margin-top:12px">В плеере — 4 цифровых релиза, 27 треков. Демо 2001–2005 и ранние синглы в сети не переизданы.</p>
+    </div>
+  </div>
+
+  <nav class="era-nav" aria-label="Оглавление эпох">
+    <ol>
+      <li><a href="#e1"><span class="yr">2001–2004</span><span class="name">Начало</span></a></li>
+      <li><a href="#e2"><span class="yr">2005–2008</span><span class="name">Прибой</span></a></li>
+      <li><a href="#e3"><span class="yr">2008–2011</span><span class="name">Сдвиги</span></a></li>
+      <li><a href="#e4"><span class="yr">2013–2017</span><span class="name">Феникс</span></a></li>
+      <li><a href="#e5"><span class="yr">2024–2025</span><span class="name">18 лет спустя</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<main>
+
+<!-- CH I -->
+<section id="e1" class="chapter">
+  <div class="wrap reveal">
+    <p class="eyr">2001–2004</p>
+    <h2>Начало</h2>
+    <p>Ядро группы — Дмитрий «Dopler» Дружков, Юрий Воронцов и Роман Сочалин — играют вместе с начала 2000-х, в Москве <a class="fn" title="Официальная версия группы — 2001 год; uk.wikipedia относит «фактическое рождение» к концу 2004-го, с приходом барабанщика" href="#note-2004">с 2001</a>. В декабре 2004-го приходит барабанщик Валентин Павлов — по украинской Википедии именно эта точка — рождение коллектива.</p>
+    <div class="ev"><span class="d">дек 2004</span><span class="t">Валентин Павлов садится за ударные — собрался классический первый состав.</span></div>
+    <div class="ev"><span class="d">лето 2005</span><span class="t">Записан первый EP «Demo» (Без Тебя, Отдай, Пустота, Убей Меня), стартуют первые туры по клубам Москвы и Питера.</span></div>
+  </div>
+</section>
+
+<!-- CH II -->
+<section id="e2" class="chapter">
+  <div class="wrap reveal">
+    <p class="eyr">2005–2008</p>
+    <h2>Прибой</h2>
+    <p>После выхода EP <a class="fn" title="Датировка расходится: официальное сообщество VK называет 2005-й, Alterportal — релиз в январе 2006" href="#note-ep">«Не жалея ни о чём»</a> группа оказывается в гуще московской альтернативной сцены — клубы «Точка», Р-Клуб, «Полигон», одна сцена с Tracktor Bowling, Психеей, Amatory. На MySpace — несколько сотен тысяч прослушиваний за полгода. Осенью 2006-го «Без тебя» выводит «Линию» в финал премии RAMP в Лужниках.</p>
+    <div class="ev"><span class="d">18 окт 2006</span><span class="t">Церемония RAMP 2006, ДС «Лужники», хедлайнер Stone Sour. «Хит года» уходит СЛОТу; «Без тебя» — в пятерке финалистов.</span></div>
+    <div class="ev"><span class="d">15 мая 2007</span><span class="t">Дебютный альбом «Два сердца, два огня» — 11 треков, лейбл «Капкан Records». Запись и сведение — Алексей «HarDrum» (Tracktor Bowling, Линда). В это же время снимается первый постановочный клип «Последний день».</span></div>
+    <div class="ev"><span class="d">4 июн 2007</span><span class="t">Юрий Воронцов играет последний концерт с группой — разогрев у AIDEN, клуб «Точка». Через два месяца вокалистом становится Василий Писаренко.</span></div>
+    <div class="ev"><span class="d">2007–2008</span><span class="t">Тур по ~20 городам РФ и СНГ, разогревы у Aiden, Funeral For A Friend и Underoath.</span></div>
+  </div>
+</section>
+
+<!-- CH III -->
+<section id="e3" class="chapter">
+  <div class="wrap reveal">
+    <p class="eyr">2008–2011</p>
+    <h2>Сдвиги</h2>
+    <p>Состав перестраивается: январь 2008 — Сочалин уходит из музыки, бас берёт Кирилл «Ракета» Черепанов. Меняется и голос группы: Писаренко — до начала 2010 года, затем Эндрю «Lockjaw» Контузов-Вантула. Параллельно группа живёт на бесплатных web-релизах и экспериментах — осенью 2008-го «Между нами» скачивается тысячами за две недели.</p>
+    <div class="ev"><span class="d">сен 2008</span><span class="t">Бесплатный web-сингл «Между нами»; акустическая программа «Acoustic &amp; Rock» в Москве и Питере.</span></div>
+    <div class="ev"><span class="d">ноя 2010</span><span class="t">Второй альбом «Отражение» — с продюсерами Bryan Boesch и Troy Glessner (работали с Korn, Underoath, Foo Fighters).</span></div>
+    <div class="ev"><span class="d">14 фев 2011</span><span class="t">Дмитрий Дружков объявляет в официальном сообществе о прекращении существования группы.</span></div>
+    <div class="ev"><span class="d">27 фев 2011</span><span class="t">Прощальный концерт в клубе ХО на Вавилова. Группа замолкает на два года.</span></div>
+  </div>
+</section>
+
+<!-- CH IV -->
+<section id="e4" class="chapter">
+  <div class="wrap reveal">
+    <p class="eyr">2013–2017</p>
+    <h2>Феникс</h2>
+    <p>Весной 2013-го «Линия» возвращается с оригинальным вокалистом Юрием Воронцовым. Анонс говорит прямо: «все три главы, все три вокалиста». 7 мая в «16 тонн» на одной сцене сходятся Воронцов, Писаренко и Контузов-Вантула — мерч с принтом «Феникс — знак возрождения».</p>
+    <div class="ev"><span class="d">7 мая 2013</span><span class="t">Концерт-возвращение, клуб «16 тонн», Москва.</span></div>
+    <div class="ev"><span class="d">27 мар 2014</span><span class="t">Сольный концерт в клубе «Театръ» + сингл «Внутри меня» — первый трек с готовившегося альбома.</span></div>
+    <div class="ev"><span class="d">сентябрь 2015</span><span class="t">EP «В окружении стен» (Уходит Время, Мы Стали Старше, Внутри Меня, Вдыхая Полной Грудью, Когда Молчат Струны).</span></div>
+    <div class="ev"><span class="d">июнь 2016</span><span class="t">Клип на трек «Лабиринты» — последний видеомаркер группы.</span></div>
+    <div class="ev"><span class="d">май 2017</span><span class="t">После весеннего тура группа окончательно прекращает деятельность: «в этот раз навсегда».</span></div>
+  </div>
+</section>
+
+<!-- CH V -->
+<section id="e5" class="finale">
+  <div class="marquee" aria-hidden="true">
+    <div class="row">
+      <span>18 лет спустя</span><span>EMOFEST 2024</span><span>Doge-002</span><span>18 лет спустя</span><span>EMOFEST 2024</span><span>Doge-002</span><span>18 лет спустя</span><span>EMOFEST 2024</span><span>Doge-002</span><span>18 лет спустя</span><span>EMOFEST 2024</span><span>Doge-002</span>
+    </div>
+  </div>
+  <div class="body">
+    <div class="wrap reveal">
+      <p class="eyr">2024–2025</p>
+      <h2>18 лет спустя</h2>
+      <p>1 и 2 марта 2024 — EMOFEST: клуб MOD в Питере и ДК «Кристалл» в Москве. Сет — только «классика»: EP «Не жалея ни о чём» и весь дебютный альбом. Группа сама помечает это выступление как единственное — дополнительная деятельность не планируется. В 2025-м лейбл Disco Doge переиздаёт дебют на виниле к 18-летию.</p>
+      <div class="vinyl">
+        <div class="disc" aria-hidden="true"></div>
+        <div>
+          <h3>Два сердца, два огня</h3>
+          <p class="d">Vinyl · Disco Doge · DOGE-002 · 2025</p>
+          <p>Первое виниловое издание дебютного альбома: 11 треков, ограниченные тиражи — серебряный и deluxe бело-голубой варианты.</p>
+          <a class="cta" href="https://disdoge.ru/product/liniya-dva-serdtsa-dva-ognya" target="_blank" rel="noopener">Смотреть на Disco Doge</a>
+          <a class="alt" href="https://maximumvinyl.ru/vinilovye-plastinki/vinilovaya-plastinka-liniya-dva-serdtsa-dva-ognya-lp-serebryanyj-vinil-doge-002" target="_blank" rel="noopener">или у Maximum Vinyl</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LADDER -->
+<section id="sostav" class="chapter">
+  <div class="wrap">
+    <div class="ladder-head reveal">
+      <h2>Состав за все годы</h2>
+      <p class="hint">Полосы — периоды участника. Приглушённые — участник продолжал, но точная дата выхода из группы неизвестна.</p>
+    </div>
+    <div class="ladder-scale mono" aria-hidden="true"><span style="left:0">2001</span><span style="left:12.5%">2004</span><span style="left:29.2%">2008</span><span style="left:41.7%">2011</span><span style="left:50%">2013</span><span style="left:66.6%">2017</span><span style="left:100%;transform:translateX(-100%)">2025</span></div>
+
+    <div class="member member-vo reveal">
+      <p class="who" tabindex="0">Юрий Воронцов<span class="role">вокал</span><span class="period">2001–2007 · вернулся 2013–2017</span></p><span class="dotline"></span>
+      <span class="track">
+        <span class="band" data-dates="2001–2007" style="left:0%;width:25%"></span>
+        <span class="band" data-dates="2013–2017 · возврат" data-gap="1" style="left:50%;width:16.6%"></span>
+      </span>
+    </div>
+    <div class="member member-vo reveal">
+      <p class="who" tabindex="0">Василий Писаренко<span class="role">вокал</span><span class="period">2007–2010</span></p><span class="dotline"></span>
+      <span class="track"><span class="band" data-dates="2007–2010" style="left:25%;width:12.5%"></span></span>
+    </div>
+    <div class="member member-vo reveal">
+      <p class="who" tabindex="0">Эндрю «Lockjaw» Контузов-Вантула<span class="role">вокал</span><span class="period">2010–2011</span></p><span class="dotline"></span>
+      <span class="track"><span class="band" data-dates="2010–2011" style="left:37.5%;width:4.2%"></span></span>
+    </div>
+    <div class="member member-gu reveal">
+      <p class="who" tabindex="0">Дмитрий «Dopler» Дружков<span class="role">гитара · вокал · лидер</span><span class="period">2001–2017, объявлял и роспуски, и возвращения</span></p><span class="dotline"></span>
+      <span class="track"><span class="band" data-dates="2001–2017" style="left:0%;width:66.6%"></span></span>
+    </div>
+    <div class="member member-gu reveal">
+      <p class="who" tabindex="0">Кирилл «Фендер» Костюшко<span class="role">гитара</span><span class="period">май 2006 — данные о позднем периоде неполные</span></p><span class="dotline"></span>
+      <span class="track"><span class="band" data-dates="май 2006 — ?" data-gap="1" style="left:20.8%;width:20.8%"></span></span>
+    </div>
+    <div class="member member-ba reveal">
+      <p class="who" tabindex="0">Роман Сочалин<span class="role">бас</span><span class="period">2001 — январь 2008, ушел из музыки</span></p><span class="dotline"></span>
+      <span class="track"><span class="band" data-dates="2001 — янв 2008" style="left:0%;width:29.2%"></span></span>
+    </div>
+    <div class="member member-ba reveal">
+      <p class="who" tabindex="0">Кирилл «Ракета» Черепанов<span class="role">бас</span><span class="period">2008 — в составе 2016</span></p><span class="dotline"></span>
+      <span class="track"><span class="band" data-dates="2008 — ?" data-gap="1" style="left:29.2%;width:33.3%"></span></span>
+    </div>
+    <div class="member member-dr reveal">
+      <p class="who" tabindex="0">Валентин Павлов<span class="role">ударные</span><span class="period">конец 2004 — данные до 2010</span></p><span class="dotline"></span>
+      <span class="track"><span class="band" data-dates="дек 2004 — ?" data-gap="1" style="left:12.5%;width:25%"></span></span>
+    </div>
+
+    <div class="ladder-notes">
+      <p class="footnote">Цвет ролей: <span style="color:#FF3B6B">вокал</span>, <span style="color:#B98A5E">гитара</span>, <span style="color:#6E9BAF">бас</span>, <span style="color:#8C7BA8">ударные</span>.</p>
+      <p class="footnote">Трое вокалистов — три главы одной группы. Все они снова пересеклись на сцене 7 мая 2013, в «16 тонн».</p>
+      <p class="footnote">Отдельно указан в одном источниковом сниппете как барабанщик «классического состава 2016» — <span style="color:#D9D5CF">Алексей Ридман</span>. Данные не подтверждены вторым источником, поэтому на шкалу не нанесен.</p>
+
+      <table class="sr-only">
+        <caption>Состав группы по периодам участия</caption>
+        <tr><th scope="col">Участник</th><th scope="col">Роль</th><th scope="col">Период участия</th></tr>
+        <tr><th scope="row">Юрий Воронцов</th><td>вокал</td><td>2001–2007, снова с 2013 по 2017; на EMOFEST 2024 голос снова его</td></tr>
+        <tr><th scope="row">Василий Писаренко</th><td>вокал</td><td>середина августа 2007 — март 2010</td></tr>
+        <tr><th scope="row">Эндрю «Lockjaw» Контузов-Вантула</th><td>вокал</td><td>март 2010 — распад 2011</td></tr>
+        <tr><th scope="row">Дмитрий «Dopler» Дружков</th><td>гитара, вокал, лидер</td><td>2001–2017, объявлял роспуск 2011 и финальный 2017</td></tr>
+        <tr><th scope="row">Кирилл «Фендер» Костюшко</th><td>гитара</td><td>с мая 2006; дата выхода из группы неизвестна (приглушённая полоса на графике)</td></tr>
+        <tr><th scope="row">Роман Сочалин</th><td>бас</td><td>2001 — январь 2008, ушёл из музыки</td></tr>
+        <tr><th scope="row">Кирилл «Ракета» Черепанов</th><td>бас</td><td>в составе с 2008; входил в состав 2016, дата выхода неизвестна</td></tr>
+        <tr><th scope="row">Валентин Павлов</th><td>ударные</td><td>с декабря 2004; данные об участии до 2010, далее неполные</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOGRAPHY -->
+<section id="disco" class="chapter">
+  <div class="wrap">
+    <div class="disc-head reveal">
+      <h2>Релизы</h2>
+      <div class="filt" role="group" aria-label="Фильтр по типам релизов">
+        <button aria-pressed="true" data-f="all">все</button>
+        <button aria-pressed="false" data-f="lp">альбомы</button>
+        <button aria-pressed="false" data-f="ep">EP</button>
+        <button aria-pressed="false" data-f="single">синглы</button>
+      </div>
+    </div>
+    <ul class="disco">
+      <li data-type="ep"><span class="date">~2001<sup>§</sup></span><span class="title">Дэмо</span><span class="meta">демо · самиздат</span></li>
+      <li data-type="ep"><span class="date">лето 2005</span><span class="title">Demo</span><span class="meta">демо · самиздат</span></li>
+      <li data-type="ep"><span class="date">2005/2006</span><span class="title">Не жалея ни о чём<sup><a class="fn" href="#note-ep">†</a></sup></span><span class="meta">EP</span></li>
+      <li data-type="single"><span class="date">дек 2006</span><span class="title">Раскрывая окна</span><span class="meta">сингл</span></li>
+      <li data-type="lp"><span class="date exact">15 мая 2007</span><span class="title"><a href="https://thelineband.bandcamp.com/album/--3" target="_blank" rel="noopener">Два сердца, два огня</a></span><span class="meta">LP · Капкан Records</span></li>
+      <li data-type="single"><span class="date">сен 2008</span><span class="title">Между нами</span><span class="meta">web-сингл · бесплатно</span></li>
+      <li data-type="lp"><span class="date exact">12 ноя 2010</span><span class="title"><a href="https://thelineband.bandcamp.com/album/--2" target="_blank" rel="noopener">Отражение</a></span><span class="meta">LP · лейбл неизвестен<sup><a class="fn" href="#note-ot">‡</a></sup></span></li>
+      <li data-type="single"><span class="date">март 2013</span><span class="title">Нас стало меньше</span><span class="meta">сингл</span></li>
+      <li data-type="single"><span class="date exact">20 марта 2014</span><span class="title">Внутри меня</span><span class="meta">сингл</span></li>
+      <li data-type="ep"><span class="date exact">14 сен 2015</span><span class="title"><a href="https://thelineband.bandcamp.com/album/-" target="_blank" rel="noopener">В окружении стен</a></span><span class="meta">EP</span></li>
+      <li data-type="single"><span class="date exact">14 июн 2016</span><span class="title"><a href="https://thelineband.bandcamp.com/album/--4" target="_blank" rel="noopener">Лабиринты</a></span><span class="meta">макси-сингл</span></li>
+      <li data-type="lp"><span class="date">2025</span><span class="title"><a href="https://disdoge.ru/product/liniya-dva-serdtsa-dva-ognya" target="_blank" rel="noopener">Два сердца, два огня</a></span><span class="meta">винил · DOGE-002</span></li>
+    </ul>
+    <div class="disc-notes">
+      <p class="note" id="note-2004">Официальная дата основания — 2001 год (версия VK); uk.wikipedia относит «фактическое рождение» к декабрю 2004, с приходом барабанщика.</p>
+      <p class="note">† Даты EP «Не жалея ни о чём» расходятся: VK называет 2005-й, Alterportal — релиз в январе 2006. Сохранили обе.</p>
+      <p class="note">‡ Ни Bandcamp, ни Apple Music, ни пресса не указывают лейбл «Отражения». Мы его тоже не придумываем.</p>
+      <p class="note">§ «Дэмо» 2001 года зафиксирован только Циклопедией — второго источника нет; даты с «~» нужно читать как «около».</p>
+      <p class="note">Демо 2001–2005 и синглы 2006–2014 в стриминге не переизданы. Каталог собран по открытым источникам — на Bandcamp только четыре релиза, в Apple Music ничего до 2007-го.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section id="pressa" class="chapter">
+  <div class="wrap">
+    <div class="disc-head reveal">
+      <h2>Пресса</h2>
+      <p class="hint">Три материала из печати: 2006, 2024. Полный список ссылок — в футере.</p>
+    </div>
+    <div class="press">
+      <article>
+        <p class="q">«Линия» — в финальной пятерке номинации «Хит года» с треком «Без тебя», фаворит голосования перед церемонией.</p>
+        <p class="src">Звуки.Ру · 16 окт 2006 · <a href="https://www.zvuki.ru/R/P/15651/" target="_blank" rel="noopener">текст</a></p>
+      </article>
+      <article>
+        <p class="q">RAMP-2006 собрал в Лужниках главных альтернативщиков страны; «Хит года» достался СЛОТу, «Линия» — в списке номинантов.</p>
+        <p class="src">InterMedia · 19 окт 2006 · <a href="https://www.intermedia.ru/news/189046" target="_blank" rel="noopener">текст</a></p>
+      </article>
+      <article>
+        <p class="q">EMOFEST — настоящий праздник ностальгии; «Линия» названа в ряду культовых групп этой сцены.</p>
+        <p class="src">DTF · 2024 · <a href="https://dtf.ru/music/3806293-emofest-2024-nostalgiya-po-emo-kulture" target="_blank" rel="noopener">текст</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA -->
+<section id="media" class="chapter">
+  <div class="wrap">
+    <div class="disc-head reveal">
+      <h2>Медиа</h2>
+      <p class="hint">Официальные клипы с канала LINEA official и фотоотчёт клуба. Полностью выстроить звук ранних лет нельзя — их нет ни на одной площадке.</p>
+    </div>
+    <ul class="media">
+      <li class="reveal"><a href="https://www.youtube.com/watch?v=djzMB6Hl6EY" target="_blank" rel="noopener"><span class="yr">2006 · клип</span><span class="nm">Без тебя</span><span class="go">Смотреть · YouTube</span></a></li>
+      <li class="reveal"><a href="https://www.youtube.com/watch?v=3FxIoHOpVxE" target="_blank" rel="noopener"><span class="yr">2013 · клип</span><span class="nm">Нас стало меньше</span><span class="go">Смотреть · YouTube</span></a></li>
+      <li class="reveal"><a href="https://www.youtube.com/watch?v=SHcwzvOIolg" target="_blank" rel="noopener"><span class="yr">2015 · клип</span><span class="nm">Вдыхая полной грудью</span><span class="go">Смотреть · YouTube</span></a></li>
+      <li class="reveal"><a href="https://www.youtube.com/watch?v=KLVwlWH5o1k" target="_blank" rel="noopener"><span class="yr">2016 · клип</span><span class="nm">Лабиринты</span><span class="go">Смотреть · YouTube</span></a></li>
+      <li class="reveal"><a href="https://m.16tons.ru/photo/2013-linia-7may" target="_blank" rel="noopener"><span class="yr">7 мая 2013 · фото</span><span class="nm">Концерт-возвращение</span><span class="go">Фотоотчёт · 16 тонн · 23 снимка</span></a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Слушать</h4>
+        <ul>
+          <li><a href="https://thelineband.bandcamp.com/" target="_blank" rel="noopener">Bandcamp — 4 цифровых релиза</a></li>
+          <li><a href="https://music.apple.com/us/artist/1556890260" target="_blank" rel="noopener">Apple Music</a></li>
+          <li><a href="https://music.yandex.ru/artist/3920567" target="_blank" rel="noopener">Яндекс Музыка</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакт</h4>
+        <ul>
+          <li><a href="mailto:mailbox@lineband.ru">mailbox@lineband.ru</a></li>
+          <li><a href="https://vk.com/lineaofficial" target="_blank" rel="noopener">VK — официальное сообщество</a></li>
+          <li><a href="https://www.youtube.com/channel/UCnUizS6nFS8KuQ9xwRzkjaA" target="_blank" rel="noopener">YouTube — LINEA official</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine note">Хроника и каталог собраны по открытым источникам 2001–2026: официальные площадки группы, Bandcamp, Apple Music, uk.wikipedia, Cyclowiki, Alterportal, Звуки.Ру, InterMedia, RadioVersta, DTF. Спорные даты сохранили в обеих версиях, неподтверждённые факты помечены. Составлено в октябре 2026.</p>
+  </div>
+</footer>
+
+<script>
+// запрет зума вьюпорта на мобильных
+// iOS Safari игнорирует user-scalable=no и maximum-scale — блокируем жесты напрямую
+['touchstart','touchmove','touchend'].forEach(t =>
+  document.addEventListener(t, e => { if (e.touches.length > 1) e.preventDefault(); }, {passive:false}));
+['gesturestart','gesturechange','gestureend'].forEach(t =>
+  document.addEventListener(t, e => { e.preventDefault(); }));
+</script>
+<script>
+// reveal-on-scroll (no-op without JS / with reduced motion)
+document.documentElement.classList.add('js');
+const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const els = document.querySelectorAll('.reveal');
+if (rm || !('IntersectionObserver' in window)) {
+  els.forEach(e => e.classList.add('in'));
+} else {
+  const io = new IntersectionObserver(en => {
+    en.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
+  }, {threshold: .12});
+  els.forEach(e => io.observe(e));
+}
+// discography filter
+const btns = document.querySelectorAll('.filt button');
+const rows = document.querySelectorAll('.disco li');
+btns.forEach(b => b.addEventListener('click', () => {
+  btns.forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+  const f = b.dataset.f;
+  rows.forEach(r => r.style.display = (f === 'all' || r.dataset.type === f) ? '' : 'none');
+}));
+// player: release switcher — recreate the iframe on switch (kills old audio, no API)
+const BASE = 'https://bandcamp.com/EmbeddedPlayer/album=ID/size=large/bgcol=141317/linkcol=ff3b6b/transparent=true/';
+const pf = document.getElementById('pframe');
+const pnote = document.getElementById('pnote');
+document.querySelectorAll('.ptab').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.ptab').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+    pf.innerHTML = '';
+    const f = document.createElement('iframe');
+    f.title = 'Плеер Bandcamp: релиз ' + b.dataset.name;
+    f.style.cssText = 'border:0;width:100%;max-width:640px;height:747px;display:block';
+    f.src = BASE.replace('ID', b.dataset.id);
+    f.setAttribute('allowfullscreen', '');
+    f.setAttribute('loading', 'lazy');
+    pf.appendChild(f);
+    pnote.textContent = 'В плеере: ' + b.dataset.name;
+  });
+});
+// mobilka: tap on participant — shutter with dates
+document.querySelectorAll('.member .who').forEach(w => {
+  w.setAttribute('aria-expanded','false');
+  w.addEventListener('click', () => {
+    const open = w.closest('.member').classList.toggle('open');
+    w.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+</script>
+</body>
+</html>
